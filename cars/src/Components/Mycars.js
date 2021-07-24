@@ -1,7 +1,7 @@
 import React,{Component, Fragment} from "react";
 import Car from "./Car";
 import Mother from "./Components_2/Mother";
-import Image from "./Components_3/Images";
+import Forms from "./Components_3/Forms";
 
 class Mycars extends Component {
     
@@ -67,7 +67,7 @@ class Mycars extends Component {
                                 
                                 
                         </div>
-                        <Image />
+                        <Forms />
                     
                     </div>
                     <div className="col-md-6 mycars-mother ">

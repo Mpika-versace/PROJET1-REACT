@@ -6,19 +6,25 @@
 .mycars{
     position: relative;
     &-image{
-        position: absolute;
-        top: -5%;
-        left: 0rem;
-        animation: image 8s linear 1s infinite none;
+        img{
+            position: absolute;
+            top: -2%;
+            left: 0rem;
+            width: 70px;
+            animation: image 8s linear 1s infinite none;
             @keyframes image {
                 0%{left: 0}
                 50%{left: 2rem}
                 100%{left: 4rem}
             }
-        img{
-            width: 70px;
             
         }
+    }
+    svg{
+        position: absolute;
+        top: 0;
+        right: 0;
+        
     }
 }
 

@@ -2,10 +2,11 @@
   position: relative;
 }
 
-.mycars-image {
+.mycars-image img {
   position: absolute;
-  top: -5%;
+  top: -2%;
   left: 0rem;
+  width: 70px;
   -webkit-animation: image 8s linear 1s infinite none;
           animation: image 8s linear 1s infinite none;
 }
@@ -34,7 +35,9 @@
   }
 }
 
-.mycars-image img {
-  width: 70px;
+.mycars svg {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 /*# sourceMappingURL=index.css.map */
