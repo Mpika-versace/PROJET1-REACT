@@ -1,0 +1,40 @@
+.mycars {
+  position: relative;
+}
+
+.mycars-image {
+  position: absolute;
+  top: -5%;
+  left: 0rem;
+  -webkit-animation: image 8s linear 1s infinite none;
+          animation: image 8s linear 1s infinite none;
+}
+
+@-webkit-keyframes image {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 2rem;
+  }
+  100% {
+    left: 4rem;
+  }
+}
+
+@keyframes image {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 2rem;
+  }
+  100% {
+    left: 4rem;
+  }
+}
+
+.mycars-image img {
+  width: 70px;
+}
+/*# sourceMappingURL=index.css.map */
