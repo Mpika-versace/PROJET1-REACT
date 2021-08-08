@@ -14,18 +14,24 @@ class Forms extends Component {
      };
      submitForm=(e)=>{
          e.preventDefault();
-         console.log(e);
+        //  console.log(this.state.comment);
+        //  console.log(e.target);
+        //  this.setState({comment:})
          
      };
      pseudoForm=(e)=>{
         //  console.log(e.target.value);
          this.setState({pseudo:e.target.value});
         
+     };
+     textareaForm=(e)=>{
+        //  console.log(e.target.value);
+         this.setState({comment:e.target.value})
      }
     render() { 
         return (
-            <div className="mycars-form " onSubmit={this.submitForm}>
-                <div className="form">
+            <div className="mycars-form " >
+                <form className="form" onSubmit={this.submitForm}>
                     <div className="mb-3">
                         <label className="form-label" htmlFor="name">Pseudo:</label>
                         <input type="text" id="name" className="form-control" onChange={this.pseudoForm}/>
@@ -35,13 +41,14 @@ class Forms extends Component {
                     </select>
                     <div className="mb-3">
                         <label htmlFor="comment" className="form-label">Example textarea</label>
-                        <textarea className="form-control" id="comment" rows="3"></textarea>
+                        <textarea className="form-control" id="comment" rows="3" onChange={this.textareaForm}></textarea>
                     </div>
                     <button className='btn btn-success' type="submit">Valider</button>
-                </div>
+                </form>
                     <Image 
                         color={this.state.color}
                         pseudo={this.state.pseudo}
+                        commentaire={this.state.comment}
                      />
             </div>
           );

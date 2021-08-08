@@ -1,7 +1,7 @@
 import React from 'react';
 
     const Car=(props)=>{
-        console.log(props);
+        // console.log(props);
         const color=(props.color)?props.color:"No color";
         return(
             <tr className="mycars bg-info py-2 my-2">

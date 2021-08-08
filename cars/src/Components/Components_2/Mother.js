@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Child from './child';
 
+
 export default class Mother extends Component {
     
     state={

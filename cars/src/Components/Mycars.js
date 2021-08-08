@@ -2,6 +2,8 @@ import React,{Component, Fragment} from "react";
 import Car from "./Car";
 import Mother from "./Components_2/Mother";
 import Forms from "./Components_3/Forms";
+import LifeCycle from "./lifecycle/LifeCycle";
+import Portails from "./portails/Portails";
 
 class Mycars extends Component {
     
@@ -11,24 +13,35 @@ class Mycars extends Component {
             {name:'Mercedez',color:'',year:2010},
             {name:'Peugeot',color:'Green',year:2020}
         ],
-        title:"My Car catalog"
+        title:"My Car catalog",
+        display:true
 
     };
     addYear=()=>{
           const  newYear=this.state.cars.map((car,index)=>{
               return car.year-=10
           });
-          console.log(newYear);
+        //   console.log(newYear);
           this.setState({newYear});
           this.setState({title:'new My Car catalog'})
     }
+    deleteComponent=()=>{
+        // (this.state.display)?this.setState({display:false}):this.setState({display:true});
+                                    // or
+    //    this.setState({display:!this.state.display})
+                            // or
+                            this.setState((prevState)=>({
+                                display:!prevState.display
+                            }))
+    }
     
     render() { 
+        const remove=(this.state.display)?<LifeCycle name='update step'/>:'';
          const getYearNow=new Date().getFullYear();
-         console.log(getYearNow);
+        //  console.log(getYearNow);
         return ( 
             <div className="container">
-                <div className="mycars row g-3 text-center">
+                <div className="mycars row g-5 text-center">
                     <div className="col-md-6 border text-center mycars">
                         <h1>
                             {this.state.title}
@@ -47,7 +60,7 @@ class Mycars extends Component {
                                 <tbody>
                                     {
                                         this.state.cars.map((car,index)=>{
-                                            console.log(car);
+                                            // console.log(car);
                                             const {name,color,year}=car;
                                             return(
                                                 <Fragment key={index}>
@@ -64,14 +77,23 @@ class Mycars extends Component {
                                 </tbody>
                                 
                             </table>
-                                
-                                
+        
                         </div>
+
                         <Forms />
                     
                     </div>
                     <div className="col-md-6 mycars-mother ">
                          <Mother />
+                    </div>
+                    <div className="col-md-6 mycars-lifecycle ">
+
+                         {remove}
+                         {/* <LifeCycle name='update step'/> */}
+                         <button onClick={this.deleteComponent} className="btn btn-dark">Delete Component</button>
+                    </div>
+                    <div className="col-md-6 mycars-portails">
+                        <Portails></Portails>
                     </div>
                 </div>
             </div> 

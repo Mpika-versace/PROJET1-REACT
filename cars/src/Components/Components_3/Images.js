@@ -13,6 +13,7 @@ const Image=(props)=>{
             </svg>
             <div className="mycars-comment">
                 <h3>Pseudo : {props.pseudo} </h3>
+                <h3>Commentaire: {props.commentaire} </h3>
             </div>
             
         </div>
